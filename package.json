@@ -1,0 +1,27 @@
+{
+  "name": "newsddit",
+  "version": "0.1.0",
+  "description": "Reddit Web Client (read-only)",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": ""
+  },
+  "author": "fernando.reyes@du.edu",
+  "license": "Apache",
+  "dependencies": {
+    "ajv": "^8.6.3",
+    "axios": "^1.2.2",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^6.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "method-override": "^3.0.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "eslint": "8.24.0"
+  }
+}
