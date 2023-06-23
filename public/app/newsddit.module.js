@@ -33,7 +33,7 @@ const newsdditModule = (function () {
 
                 let listing_type = document.querySelector('#listing-type').value;
                 let timeframe = document.querySelector('#timeframe').value;
-                let sub = document.querySelector('#sub').value.trim();
+                let sub = document.querySelector('#sub').value.trim().toLowerCase();
                 let query_string = '?';
                     query_string += `listing_type=${listing_type}`;
                     query_string += `&timeframe=${timeframe}`;
