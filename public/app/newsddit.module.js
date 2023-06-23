@@ -20,12 +20,22 @@ const newsdditModule = (function () {
 
     let obj = {};
 
+    obj.collapse_nav = function() {
+        document
+            .querySelector('.navbar-toggler')
+            .dispatchEvent(new Event('click'));
+
+        newsdditModule.get_posts();
+    };
+
     obj.set_sub = function (sub) {
         document.querySelector('#sub').value = sub.replace('r/', '');
         newsdditModule.get_posts();
     };
 
     obj.get_posts = function () {
+
+        loading();
 
         (async () => {
 
@@ -69,7 +79,7 @@ const newsdditModule = (function () {
 
     const display_posts = function (posts) {
 
-        document.querySelector('#posts').innerHTML = '';
+        document.querySelector('#menu-form').reset();
 
         if (posts.length === 0) {
 
@@ -153,6 +163,29 @@ const newsdditModule = (function () {
         }
 
         document.querySelector('#posts').innerHTML = html;
+    };
+
+    const loading = function () {
+
+        document.querySelector('#posts').innerHTML = '';
+
+        let html = `<div class="col">
+            <div class="card shadow-sm">
+            <div class="card-body">
+            <p class="card-text">
+            <div class="alert alert-info" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning" viewBox="0 0 16 16">
+            <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5zM6.374 1 4.168 8.5H7.5a.5.5 0 0 1 .478.647L6.78 13.04 11.478 7H8a.5.5 0 0 1-.474-.658L9.306 1H6.374z"/>
+            </svg>
+            <small>Loading...</small></div>
+        </p>
+        </div>
+        </div>
+        </div>`;
+
+        document.querySelector('#posts').innerHTML = html;
+
+        return false;
     };
 
     obj.init = function () {

@@ -102,25 +102,24 @@
 </svg>
 
 <header data-bs-theme="dark">
-    <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="collapse navbar-collapse text-bg-dark" id="navbarHeader">
         <div id="sub-form" class="container">
             <div class="row">
                 <div class="col-sm-4 offset-md-1 py-4">
                     <div class="col-sm-8 col-md-7 py-4">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <form>
-                                    <select onchange="newsdditModule.get_posts();" id="listing-type"
+                                <form id="menu-form">
+                                    <select onchange="newsdditModule.collapse_nav();" id="listing-type"
                                             class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
                                         <option value="hot">Hot</option>
                                         <option value="top">Top</option>
                                         <option value="new">New</option>
                                         <option value="best">Best</option>
-                                        <option value="random">Random</option>
                                         <option value="rising">Rising</option>
                                         <option value="controversial">Controversial</option>
                                     </select>
-                                    <select onchange="newsdditModule.get_posts();" id="timeframe"
+                                    <select onchange="newsdditModule.collapse_nav();" id="timeframe"
                                             class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
                                         <option value="week">Week</option>
                                         <option value="day">Day</option>
@@ -129,7 +128,7 @@
                                         <option value="hour">Hour</option>
                                         <option value="all">All</option>
                                     </select>
-                                    <select onchange="newsdditModule.get_posts();" id="fav-sub"
+                                    <select onchange="newsdditModule.collapse_nav();" id="fav-sub"
                                             class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
                                         <option value="none">Favorite Subs</option>
                                         <option value="news">News</option>
@@ -145,7 +144,8 @@
                                         <input id="sub" type="text" class="form-control" placeholder="Subreddit"
                                                aria-label="subreddit" aria-describedby="basic-addon1">
                                         <button onclick="newsdditModule.get_posts();" type="button"
-                                                class="btn btn-outline-secondary">Go!
+                                                class="btn btn-outline-secondary"
+                                                data-bs-toggle="collapse" data-bs-target="#navbarHeader">Go!
                                         </button>
                                     </div>
                                 </form>
