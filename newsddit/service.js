@@ -53,9 +53,20 @@ exports.get_posts = function (req, res) {
             if (response.status === 200) {
 
                 let posts = [];
+
+                if (response.data.data.children.length === 0) {
+                    res.status(200).send(posts);
+                    return false;
+                }
+
                 let data = response.data.data.children;
 
                 for (let i=0; i<data.length;i++) {
+
+                    if (data[i].kind === 't5') {
+                        res.status(200).send(posts);
+                        return false;
+                    }
 
                     posts.push({
                         sub: data[i].data.subreddit_name_prefixed,
@@ -79,7 +90,7 @@ exports.get_posts = function (req, res) {
             }
 
         } catch (error) {
-            console.error(error);
+            console.error(error.message);
         }
 
     })();
