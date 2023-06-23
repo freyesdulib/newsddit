@@ -103,7 +103,7 @@ const newsdditModule = (function () {
                                     <button type="button" class="btn btn-sm btn-outline-secondary"><small>Up votes: ${posts[i].ups}</small></button>
                                     ${link_text}
                                 </div>
-                                <small class="text-body-secondary"><a class="btn btn-warning" href="http://reddit.com/${posts[i].comments}" target="_blank"><small>Comments: ${posts[i].num_comments}</small></a></small>
+                                <small class="text-body-secondary"><a class="btn btn-warning" href="https://reddit.com/${posts[i].comments}" target="_blank"><small>Comments: ${posts[i].num_comments}</small></a></small>
                             </div>
                     </div>
                     </div>
