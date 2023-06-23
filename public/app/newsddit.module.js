@@ -98,9 +98,9 @@ const newsdditModule = (function () {
 
             html += `<div class="col">
                     <div class="card shadow-sm">  
-                    <div class="card-body">
+                    <div class="card-body"><!-- class="btn btn-primary" -->
                             <p class="card-text"><a onclick="newsdditModule.set_sub('${posts[i].sub}');" href="#"><small>${posts[i].sub}</small></a></p>
-                            <p class="card-text"><a class="btn btn-primary" href="${posts[i].url}" target="_blank">${posts[i].title}&nbsp;</a></p>
+                            <p class="card-text"><a href="${posts[i].url}" target="_blank">${posts[i].title}&nb</a></p>
                             <p class="card-text">${media}</p>
                             <p class="card-text">${thumbnail}</p>
                             <p class="card-text"><small>by <em>${posts[i].author}</em></small></p>
