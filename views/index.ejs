@@ -147,6 +147,41 @@
                     subs = popular, news, dividends, cfb, investing, stockmarket, art, aww, history, movies, nottheonion, nfl, denver
                     -->
                     <div class="col-sm-8 col-md-7 py-4">
+
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <form>
+                                    <select onchange="newsdditModule.get_posts();" id="listing-type"
+                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                        <option value="hot">Hot</option>
+                                        <option value="top">Top</option>
+                                        <option value="new">New</option>
+                                        <option value="best">Best</option>
+                                        <option value="random">Random</option>
+                                        <option value="rising">Rising</option>
+                                        <option value="controversial">Controversial</option>
+                                    </select>
+                                    <select onchange="newsdditModule.get_posts();" id="timeframe"
+                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                        <option value="week">Week</option>
+                                        <option value="day">Day</option>
+                                        <option value="month">Month</option>
+                                        <option value="year">Year</option>
+                                        <option value="hour">Hour</option>
+                                        <option value="all">All</option>
+                                    </select>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">r/</span>
+                                        <input id="sub" type="text" class="form-control" placeholder="Subreddit"
+                                               aria-label="subreddit" aria-describedby="basic-addon1">
+                                        <button onclick="newsdditModule.get_posts();" type="button"
+                                                class="btn btn-outline-secondary">Go!
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
                         <h4>About</h4>
                         <p class="text-body-secondary">Newsddit v0.5.0 | Bootstrap/JavaScript/Node.js based Reddit web client
                             (read-only)
@@ -182,41 +217,6 @@
     <div class="album py-5 bg-body-tertiary" data-bs-theme="dark">
         <div class="container" data-bs-theme="dark">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <form>
-                                <select onchange="newsdditModule.get_posts();" id="listing-type"
-                                        class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                    <option value="hot">Hot</option>
-                                    <option value="top">Top</option>
-                                    <option value="new">New</option>
-                                    <option value="best">Best</option>
-                                    <option value="random">Random</option>
-                                    <option value="rising">Rising</option>
-                                    <option value="controversial">Controversial</option>
-                                </select>
-                                <select onchange="newsdditModule.get_posts();" id="timeframe"
-                                        class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                    <option value="week">Week</option>
-                                    <option value="day">Day</option>
-                                    <option value="month">Month</option>
-                                    <option value="year">Year</option>
-                                    <option value="hour">Hour</option>
-                                    <option value="all">All</option>
-                                </select>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1">r/</span>
-                                    <input id="sub" type="text" class="form-control" placeholder="Subreddit"
-                                           aria-label="subreddit" aria-describedby="basic-addon1">
-                                    <button onclick="newsdditModule.get_posts();" type="button"
-                                            class="btn btn-outline-secondary">Go!
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
                 <div id="posts">
                     <div class="col">
                         <div class="card shadow-sm">
