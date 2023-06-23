@@ -33,6 +33,7 @@ const newsdditModule = (function () {
 
                 let listing_type = document.querySelector('#listing-type').value;
                 let timeframe = document.querySelector('#timeframe').value;
+                let fav_sub = document.querySelector('#fav-sub').value;
                 let sub = document.querySelector('#sub').value.trim().toLowerCase();
                 let query_string = '?';
                     query_string += `listing_type=${listing_type}`;
@@ -40,8 +41,9 @@ const newsdditModule = (function () {
 
                     if (sub.length > 0) {
                         query_string += `&sub=${sub}`;
+                    } else if (fav_sub !== 'none') {
+                        query_string += `&sub=${fav_sub}`;
                     }
-
 
                 let url = `/api/posts${query_string}`;
                 let response = await httpModule.req({
