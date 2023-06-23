@@ -117,7 +117,7 @@ const newsdditModule = (function () {
                     poster="${posts[i].thumbnail}"
                     width="100%"
                     height="225px">
-                    Sorry, your browser doesn't support embedded videos, but don't worry, you can
+                    Sorry, your browser doesn't support embedded videos.
                 </video>`;
             }
 
