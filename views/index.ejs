@@ -52,8 +52,8 @@
             font-family: "Verdana"
         }
 
-        .container {
-            padding-top: 30px;
+        #sub-form {
+            padding-top: 15px;
         }
 
         #posts {
@@ -103,18 +103,15 @@
 
 <header data-bs-theme="dark">
     <div class="collapse text-bg-dark" id="navbarHeader">
-        <div class="container">
+        <div id="sub-form" class="container">
             <div class="row">
                 <div class="col-sm-4 offset-md-1 py-4">
-                    <!--
-                    subs = art, aww, history, movies, nottheonion, denver
-                    -->
-                    <div id="sub-form" class="col-sm-8 col-md-7 py-4">
+                    <div class="col-sm-8 col-md-7 py-4">
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <form>
                                     <select onchange="newsdditModule.get_posts();" id="listing-type"
-                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
                                         <option value="hot">Hot</option>
                                         <option value="top">Top</option>
                                         <option value="new">New</option>
@@ -124,7 +121,7 @@
                                         <option value="controversial">Controversial</option>
                                     </select>
                                     <select onchange="newsdditModule.get_posts();" id="timeframe"
-                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
                                         <option value="week">Week</option>
                                         <option value="day">Day</option>
                                         <option value="month">Month</option>
@@ -141,6 +138,7 @@
                                         <option value="stockmarket">Stockmarket</option>
                                         <option value="cfb">CFB</option>
                                         <option value="nfl">NFL</option>
+                                        <option value="movies">Movies</option>
                                     </select>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">r/</span>
@@ -153,20 +151,7 @@
                                 </form>
                             </div>
                         </div>
-                        <!--
-                        <hr>
-                        <h4>About</h4>
-                        <p class="text-body-secondary">Newsddit v0.5.0 | Bootstrap/JavaScript/Node.js based Reddit web client
-                            (read-only)
-                        </p>
-                        -->
                     </div>
-                    <!--
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">fernando.reyes AT du DOT edu</a></li>
-                    </ul>
-                    -->
                 </div>
             </div>
         </div>
