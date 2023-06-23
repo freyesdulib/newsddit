@@ -124,7 +124,7 @@ const newsdditModule = (function () {
             html += `<div class="col">
                     <div class="card shadow-sm">  
                     <div class="card-body">
-                            <p class="card-text sub"><a class="btn" onclick="newsdditModule.set_sub('${posts[i].sub}');" href="#"><small>${posts[i].sub}</small></a></p>
+                            <p class="card-text"><a class="btn sub" onclick="newsdditModule.set_sub('${posts[i].sub}');" href="#"><small>${posts[i].sub}</small></a></p>
                             <p class="card-text"><a href="${posts[i].url}" target="_blank">${posts[i].title}</a></p>
                             <p class="card-text">${media}</p>
                             <p class="card-text">${thumbnail}</p>
