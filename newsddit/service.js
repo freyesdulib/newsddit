@@ -31,7 +31,7 @@ exports.get_posts = function (req, res) {
 
             const API = CONFIG.api;
             let sub = 'popular';
-            let listing_type = 'top';
+            let listing_type = 'hot';
             let timeframe = 'week';
 
             if (req.query.sub !== undefined) {
