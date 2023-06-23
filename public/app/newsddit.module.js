@@ -19,6 +19,12 @@ const newsdditModule = (function () {
     'use strict';
 
     let obj = {};
+
+    obj.set_sub = function (sub) {
+        document.querySelector('#sub').value = sub.replace('r/', '');
+        newsdditModule.get_posts();
+    };
+
     obj.get_posts = function () {
 
         (async () => {
@@ -93,7 +99,7 @@ const newsdditModule = (function () {
             html += `<div class="col">
                     <div class="card shadow-sm">  
                     <div class="card-body">
-                            <p class="card-text"><small>${posts[i].sub}</small></p>
+                            <p class="card-text"><a onclick="newsdditModule.set_sub('${posts[i].sub}');" href="#"><small>${posts[i].sub}</small></a></p>
                             <p class="card-text"><a class="btn btn-primary" href="${posts[i].url}" target="_blank">${posts[i].title}&nbsp;</a></p>
                             <p class="card-text">${media}</p>
                             <p class="card-text">${thumbnail}</p>
