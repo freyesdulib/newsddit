@@ -70,7 +70,8 @@ exports.get_posts = function (req, res) {
                         preview: data[i].data.preview,
                         link_text: data[i].data.link_flair_text,
                         ups: data[i].data.ups,
-                        is_video: data[i].data.is_video
+                        is_video: data[i].data.is_video,
+                        created: data[i].data.created_utc
                     });
                 }
 

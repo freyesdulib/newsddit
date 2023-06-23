@@ -78,7 +78,12 @@ const newsdditModule = (function () {
             let thumbnail = '';
 
             if (posts[i].thumbnail.length !== 0 && posts[i].thumbnail.length > 10) {
-                thumbnail = `<img src="${posts[i].thumbnail}" width="100px" height="100px">`;
+
+                if (posts[i].preview !== undefined && posts[i].preview.images[0].resolutions[2] !== undefined) {
+                    thumbnail = `<img src="${posts[i].preview.images[0].resolutions[2].url}" width="100%" height="100%">`;
+                } else {
+                    thumbnail = `<img src="${posts[i].thumbnail}" width="100px" height="100px">`;
+                }
             }
 
             if (posts[i].link_text !== null) {
@@ -91,15 +96,15 @@ const newsdditModule = (function () {
                     src="${posts[i].media.reddit_video.fallback_url}"
                     poster="${posts[i].thumbnail}"
                     width="100%"
-                    height="225">
+                    height="225px">
                     Sorry, your browser doesn't support embedded videos, but don't worry, you can
                 </video>`;
             }
 
             html += `<div class="col">
                     <div class="card shadow-sm">  
-                    <div class="card-body"><!-- class="btn btn-primary" -->
-                            <p class="card-text"><a onclick="newsdditModule.set_sub('${posts[i].sub}');" href="#"><small>${posts[i].sub}</small></a></p>
+                    <div class="card-body">
+                            <p class="card-text sub"><a class="btn" onclick="newsdditModule.set_sub('${posts[i].sub}');" href="#"><small>${posts[i].sub}</small></a></p>
                             <p class="card-text"><a href="${posts[i].url}" target="_blank">${posts[i].title}&nb</a></p>
                             <p class="card-text">${media}</p>
                             <p class="card-text">${thumbnail}</p>
