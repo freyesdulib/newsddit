@@ -52,6 +52,10 @@
             font-family: "Verdana"
         }
 
+        #sub-form {
+            padding-top: 40px;
+        }
+
         #posts {
             padding-top: 15px;
         }
@@ -103,9 +107,9 @@
             <div class="row">
                 <div class="col-sm-4 offset-md-1 py-4">
                     <!--
-                    subs = popular, news, dividends, cfb, investing, stockmarket, art, aww, history, movies, nottheonion, nfl, denver
+                    subs = art, aww, history, movies, nottheonion, denver
                     -->
-                    <div class="col-sm-8 col-md-7 py-4">
+                    <div id="sub-form" class="col-sm-8 col-md-7 py-4">
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <form>
@@ -128,6 +132,16 @@
                                         <option value="hour">Hour</option>
                                         <option value="all">All</option>
                                     </select>
+                                    <select onchange="newsdditModule.get_posts();" id="fav-sub-select"
+                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                                        <option selected>Favorite Subs</option>
+                                        <option value="news">News</option>
+                                        <option value="dividends">Dividends</option>
+                                        <option value="investing">Investing</option>
+                                        <option value="stockmarket">Stockmarket</option>
+                                        <option value="cfb">CFB</option>
+                                        <option value="nfl">NFL</option>
+                                    </select>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">r/</span>
                                         <input id="sub" type="text" class="form-control" placeholder="Subreddit"
@@ -139,17 +153,20 @@
                                 </form>
                             </div>
                         </div>
+                        <!--
                         <hr>
                         <h4>About</h4>
                         <p class="text-body-secondary">Newsddit v0.5.0 | Bootstrap/JavaScript/Node.js based Reddit web client
                             (read-only)
                         </p>
-                        <p class="text-body-secondary">App is used for instructional purposes.</p>
+                        -->
                     </div>
+                    <!--
                     <h4>Contact</h4>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-white">fernando.reyes AT du DOT edu</a></li>
                     </ul>
+                    -->
                 </div>
             </div>
         </div>
@@ -199,7 +216,9 @@
         <p class="float-end mb-1">
             <a class="btn sub" href="#">Back to top</a>
         </p>
-        <p class="mb-1">Newsddit v0.5.0</p>
+        <!--<p class="mb-1">Newsddit v0.5.0</p>-->
+        <p class="mb-1">Newsddit v0.5.0 | Bootstrap/JavaScript/Node.js based Reddit web client (read-only) | fernando DOT reyes AT du DOT edu</p>
+        <p class="text-body-secondary">App is used for instructional purposes.</p>
     </div>
 </footer>
 <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"
