@@ -46,7 +46,7 @@ exports.get_posts = function (req, res) {
                 timeframe = req.query.timeframe;
             }
 
-            let limit = 200;
+            let limit = 100;
             let url = `${API}/r/${sub}/${listing_type}.json?limit=${limit}&t=${timeframe}`;
             const response = await HTTP.get(url);
 
@@ -91,6 +91,7 @@ exports.get_posts = function (req, res) {
 
         } catch (error) {
             console.error(error.message);
+            res.status(error.response.status).send(error.response.data);
         }
 
     })();
