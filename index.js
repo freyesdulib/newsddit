@@ -21,14 +21,16 @@ if (process.env.NODE_ENV === undefined) {
 }
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const express = require('./config/express');
 const APP = express();
-
 const port = process.env.PORT || 3000;
 APP.listen(port);
 
-console.log('Newsddit running at http://' + process.env.APP_HOST + ':' + port + ' in ' + process.env.NODE_ENV + ' mode.');
+if (process.env.NODE_ENV === 'production') {
+    console.log('Newsddit running at https://' + process.env.PROD_DOMAIN + ' in ' + process.env.NODE_ENV + ' mode.');
+} else {
+    console.log('Newsddit running at http://' + process.env.APP_HOST + ':' + port + ' in ' + process.env.NODE_ENV + ' mode.');
+}
 
 module.exports = APP;
