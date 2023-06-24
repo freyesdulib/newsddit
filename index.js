@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === undefined) {
 }
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
 const express = require('./config/express');
 const APP = express();
