@@ -25,6 +25,15 @@ exports.get_app = function (req, res) {
 
 exports.get_posts = function (req, res) {
 
+    console.log('hostname test: ', req.hostname);
+
+    /*
+    if (req.hostname !== CONFIG.app_host) {
+        res.status(403).send();
+        return false;
+    }
+    */
+
     (async () => {
 
         try {

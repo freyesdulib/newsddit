@@ -18,5 +18,7 @@
 
 module.exports = {
     host: process.env.HOST,
-    api: process.env.API
+    app_host: process.env.APP_HOST,
+    api: process.env.API,
+    prod_domain: process.env.PROD_DOMAIN
 };
