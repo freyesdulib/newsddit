@@ -124,11 +124,11 @@ const newsdditModule = (function () {
 
             if (posts[i].is_video === true && posts[i].media !== null) {
                 thumbnail = '';
-                media = `<video controls 
-                    src="${posts[i].media.reddit_video.fallback_url}"
+                media = `<video controls
                     poster="${posts[i].thumbnail}"
                     width="100%"
                     height="225px">
+                    <source src="${posts[i].media.reddit_video.fallback_url}">
                     Sorry, your browser doesn't support embedded videos.
                 </video>`;
             }
