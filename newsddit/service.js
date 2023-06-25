@@ -82,11 +82,13 @@ exports.get_posts = function (req, res) {
                         media_embed: data[i].data.media_embed,
                         media: data[i].data.media,
                         author: data[i].data.author,
+                        all_awardings: data[i].data.all_awardings,
                         num_comments: data[i].data.num_comments,
                         preview: data[i].data.preview,
                         link_text: data[i].data.link_flair_text,
                         ups: data[i].data.ups,
                         is_video: data[i].data.is_video,
+                        post_hint: data[i].data.post_hint,
                         posted_date: convert_timestamp(data[i].data.created_utc)
                     });
                 }
