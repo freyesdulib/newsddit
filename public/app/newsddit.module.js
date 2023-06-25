@@ -109,11 +109,20 @@ const newsdditModule = (function () {
             let media = '';
             let thumbnail = '';
             let post_hint = '';
+            let awardings = '';
 
             if (posts[i].thumbnail.length !== 0 && posts[i].thumbnail.length > 10) {
 
-                if (posts[i].preview !== undefined && posts[i].preview.images[0].resolutions[4] !== undefined) {
+                if (posts[i].preview !== undefined && posts[i].preview.images[0].resolutions[5] !== undefined) {
+                    thumbnail = `<a href="${posts[i].url}" title="${posts[i].title}" target="_blank"><img src="${posts[i].preview.images[0].resolutions[5].url}" width="100%" height="100%" alt="image"></a>`;
+                } else if (posts[i].preview !== undefined && posts[i].preview.images[0].resolutions[4] !== undefined) {
                     thumbnail = `<a href="${posts[i].url}" title="${posts[i].title}" target="_blank"><img src="${posts[i].preview.images[0].resolutions[4].url}" width="100%" height="100%" alt="image"></a>`;
+                } else if (posts[i].preview !== undefined && posts[i].preview.images[0].resolutions[3] !== undefined) {
+                    thumbnail = `<a href="${posts[i].url}" title="${posts[i].title}" target="_blank"><img src="${posts[i].preview.images[0].resolutions[3].url}" width="100%" height="100%" alt="image"></a>`;
+                } else if (posts[i].preview !== undefined && posts[i].preview.images[0].resolutions[2] !== undefined) {
+                    thumbnail = `<a href="${posts[i].url}" title="${posts[i].title}" target="_blank"><img src="${posts[i].preview.images[0].resolutions[2].url}" width="100%" height="100%" alt="image"></a>`;
+                } else if (posts[i].preview !== undefined && posts[i].preview.images[0].resolutions[1] !== undefined) {
+                    thumbnail = `<a href="${posts[i].url}" title="${posts[i].title}" target="_blank"><img src="${posts[i].preview.images[0].resolutions[1].url}" width="100%" height="100%" alt="image"></a>`;
                 } else {
                     thumbnail = `<a href="${posts[i].url}" title="${posts[i].title}" target="_blank"><img src="${posts[i].thumbnail}" width="140px" height="140px" alt="image"></a>`;
                 }
@@ -140,6 +149,12 @@ const newsdditModule = (function () {
                     </button>`;
             }
 
+            if (posts[i].all_awardings !== undefined && posts[i].all_awardings.length > 0) {
+                for (let j=0;j<posts[i].all_awardings.length;j++) {
+                    awardings += `<img src="${posts[i].all_awardings[j].resized_static_icons[0].url}" title="${posts[i].all_awardings[j].name}" alt="image">&nbsp;`;
+                }
+            }
+
             html += `<div class="col">
                     <div class="card shadow-sm">  
                     <div class="card-body">
@@ -149,7 +164,7 @@ const newsdditModule = (function () {
                             </p>
                             <p class="card-text">${media}</p>
                             <p class="card-text">${thumbnail}</p>
-                            <p class="card-text"><small>by <em>${posts[i].author}</em></small></p>
+                            <p class="card-text"><small>by <em>${posts[i].author}</em> ${awardings}</small></p>
                             <p class="card-text">
                                 <span class="posted-on">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
