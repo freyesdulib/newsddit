@@ -105,62 +105,6 @@
     </symbol>
 </svg>
 <header data-bs-theme="dark">
-    <div class="collapse navbar-collapse text-bg-dark" id="navbarHeader">
-        <div id="sub-form" class="container">
-            <div class="row">
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <div class="col-sm-8 col-md-7 py-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <form id="menu-form">
-                                    <select id="listing-type"
-                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-                                        <option value="hot">Hot</option>
-                                        <option value="top">Top</option>
-                                        <option value="new">New</option>
-                                        <option value="best">Best</option>
-                                        <option value="rising">Rising</option>
-                                        <option value="controversial">Controversial</option>
-                                    </select>
-                                    <select id="timeframe"
-                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-                                        <option value="week">Week</option>
-                                        <option value="day">Day</option>
-                                        <option value="month">Month</option>
-                                        <option value="year">Year</option>
-                                        <option value="hour">Hour</option>
-                                        <option value="all">All</option>
-                                    </select>
-                                    <select onchange="newsdditModule.collapse_nav();" id="fav-sub"
-                                            class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-                                        <option value="none">Favorite Subs</option>
-                                        <option value="popular">Popular</option>
-                                        <option value="news">News</option>
-                                        <option value="dividends">Dividends</option>
-                                        <option value="investing">Investing</option>
-                                        <option value="stockmarket">StockMarket</option>
-                                        <option value="programmerhumor">ProgrammerHumor</option>
-                                        <option value="cfb">CFB</option>
-                                        <option value="nfl">NFL</option>
-                                        <option value="movies">Movies</option>
-                                    </select>
-                                    <div class="input-group mb-3">
-                                        <span class="input-group-text" id="basic-addon1">r/</span>
-                                        <input id="sub" type="text" class="form-control" placeholder="Subreddit"
-                                               aria-label="subreddit" aria-describedby="basic-addon1">
-                                        <button onclick="newsdditModule.get_posts();" type="button"
-                                                class="btn btn-outline-secondary"
-                                                data-bs-toggle="collapse" data-bs-target="#navbarHeader">Go!
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="navbar navbar-dark bg-dark shadow-sm fixed-top">
         <div class="container">
             <a href="#" class="navbar-brand d-flex align-items-center">
@@ -178,10 +122,10 @@
                     </svg>
                 </a>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
-                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <button type="button" class="navbar-toggler" data-bs-toggle="modal" data-bs-target="#sub-form-modal">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
         </div>
     </div>
 </header>
@@ -224,6 +168,75 @@
         </p>
     </div>
 </footer>
+<!-- Modal -->
+<div class="modal fade" id="sub-form-modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalLabel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                         class="bi bi-layout-text-window-reverse" viewBox="0 0 16 16">
+                        <path d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"/>
+                        <path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z"/>
+                    </svg>
+                    <strong>&nbsp;&nbsp;Newsddit</strong>
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="menu-form">
+                            <select id="listing-type"
+                                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                                <option value="hot">Hot</option>
+                                <option value="top">Top</option>
+                                <option value="new">New</option>
+                                <option value="best">Best</option>
+                                <option value="rising">Rising</option>
+                                <option value="controversial">Controversial</option>
+                            </select>
+                            <select id="timeframe"
+                                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                                <option value="week">Week</option>
+                                <option value="day">Day</option>
+                                <option value="month">Month</option>
+                                <option value="year">Year</option>
+                                <option value="hour">Hour</option>
+                                <option value="all">All</option>
+                            </select>
+                            <select onchange="newsdditModule.collapse_nav();" id="fav-sub"
+                                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                                <option value="none">Favorite Subs</option>
+                                <option value="popular">Popular</option>
+                                <option value="news">News</option>
+                                <option value="dividends">Dividends</option>
+                                <option value="investing">Investing</option>
+                                <option value="stockmarket">StockMarket</option>
+                                <option value="programmerhumor">ProgrammerHumor</option>
+                                <option value="cfb">CFB</option>
+                                <option value="nfl">NFL</option>
+                                <option value="movies">Movies</option>
+                            </select>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">r/</span>
+                                <input id="sub" type="text" class="form-control" placeholder="Subreddit"
+                                       aria-label="subreddit" aria-describedby="basic-addon1">
+                                <button onclick="newsdditModule.collapse_nav();" type="button"
+                                        class="btn btn-outline-secondary"
+                                        data-bs-toggle="collapse" data-bs-target="#navbarHeader">Go!
+                                </button><!-- newsdditModule.get_posts(); -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
