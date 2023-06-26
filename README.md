@@ -106,12 +106,13 @@ Use the `BLANK_README.md` to get started.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JavaScript][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
+* [Bootstrap](https://getbootstrap.com/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Nodejs](https://nodejs.org/en)
+* [Expressjs](https://expressjs.com/)
+* [Axiosjs](https://axios-http.com/docs/intro)
+* [Heroku](https://www.heroku.com/)
+* [Reddit](https://www.reddit.com/dev/api/)
 
 
 
@@ -222,6 +223,7 @@ Project Link: [https://github.com/freyesdulib/newsddit](https://github.com/freye
 * [Bootstrap](https://getbootstrap.com/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Nodejs](https://nodejs.org/en)
+* [Expressjs](https://expressjs.com/)
 * [Axiosjs](https://axios-http.com/docs/intro)
 * [Heroku](https://www.heroku.com/)
 * [Reddit](https://www.reddit.com/dev/api/)
