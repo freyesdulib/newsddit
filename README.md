@@ -85,23 +85,21 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-*[[Newsddit Mobile View](https://i.imgur.com/DAl1oIQ.png)
-*[[Newsddit Modal Form](https://i.imgur.com/mIQdjiR.png)
-*[[Newsddit Desktop View](https://i.imgur.com/6TAjZDS.png)
+*[Newsddit Mobile View](https://i.imgur.com/DAl1oIQ.png)
+*[Newsddit Modal Form](https://i.imgur.com/mIQdjiR.png)
+*[Newsddit Desktop View](https://i.imgur.com/6TAjZDS.png)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+I created this App to simplify my Reddit browsing experience and to use it as an instructional tool when teaching Web Development courses.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+The app allows me to discuss the following:
+* Download and modify a Bootstrap template
+* Make asynchronous HTTP requests
+* Parse JSON responses using JavaScript
+* Gain exposure to both client-side and server-side JavaScript
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+Feel free to suggest changes by forking this repo and creating a pull request or opening an issue.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ### Built With
