@@ -85,8 +85,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Newsddit Mobile View][product-screenshot]](https://i.imgur.com/DAl1oIQ.png)
-[![Newsddit Desktop View][product-screenshot]](https://i.imgur.com/6TAjZDS.png)
+*[![Newsddit Mobile View]](https://i.imgur.com/DAl1oIQ.png)
+*[![Newsddit Modal Form]](https://i.imgur.com/mIQdjiR.png)
+*[![Newsddit Desktop View]](https://i.imgur.com/6TAjZDS.png)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
@@ -105,8 +106,6 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [Bootstrap](https://getbootstrap.com/)
 * [Bootstrap Album Template](https://getbootstrap.com/docs/5.3/examples/album/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -117,9 +116,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [Reddit API](https://www.reddit.com/dev/api/)
 
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
