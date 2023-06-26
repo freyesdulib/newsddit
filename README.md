@@ -107,12 +107,13 @@ Use the `BLANK_README.md` to get started.
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Bootstrap](https://getbootstrap.com/)
+* [Bootstrap Album Template](https://getbootstrap.com/docs/5.3/examples/album/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [Nodejs](https://nodejs.org/en)
 * [Expressjs](https://expressjs.com/)
 * [Axiosjs](https://axios-http.com/docs/intro)
-* [Heroku](https://www.heroku.com/)
-* [Reddit](https://www.reddit.com/dev/api/)
+* [Heroku Hosting](https://www.heroku.com/)
+* [Reddit API](https://www.reddit.com/dev/api/)
 
 
 
