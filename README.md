@@ -149,10 +149,19 @@ This section should list any major frameworks/libraries used to bootstrap your p
    ```sh
    cd newsddit
    ```
+4. Rename .env-example to .env`
+   ```sh
+   mv .env-example .env
+   ```
 
-4. Start App`
+5. Start App`
    ```sh
    node index.js
+   ```
+
+6. Browse to App`
+   ```sh
+   http://localhost:3000
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
