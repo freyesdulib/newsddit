@@ -85,7 +85,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Newsddit Desktop View][product-screenshot]](https://imgur.com/6TAjZDS)
+[![Newsddit Mobile View][product-screenshot]](https://i.imgur.com/DAl1oIQ.png)
+[![Newsddit Desktop View][product-screenshot]](https://i.imgur.com/6TAjZDS.png)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
