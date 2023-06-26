@@ -85,9 +85,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-*[![Newsddit Mobile View]](https://i.imgur.com/DAl1oIQ.png)
-*[![Newsddit Modal Form]](https://i.imgur.com/mIQdjiR.png)
-*[![Newsddit Desktop View]](https://i.imgur.com/6TAjZDS.png)
+*[[Newsddit Mobile View](https://i.imgur.com/DAl1oIQ.png)
+*[[Newsddit Modal Form](https://i.imgur.com/mIQdjiR.png)
+*[[Newsddit Desktop View](https://i.imgur.com/6TAjZDS.png)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
