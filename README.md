@@ -95,7 +95,7 @@ The app allows me to discuss the following:
 * Download and modify a Bootstrap template
 * Make asynchronous HTTP requests
 * Parse JSON responses using JavaScript
-* Gain exposure to both client-side and server-side JavaScript
+* Change HTML pages using the Document Object Model (DOM)
 
 Feel free to suggest changes by forking this repo and creating a pull request or opening an issue.
 
