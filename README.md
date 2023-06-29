@@ -44,8 +44,6 @@
     <br />
     <br />
     -->
-    <a href="https://newsddit-70b7491f789c.herokuapp.com/">View Demo</a>
-    ·
     <a href="https://github.com/freyesdulib/newsddit/issues">Report Bug</a>
     ·
     <a href="https://github.com/freyesdulib/newsddit/issues">Request Feature</a>
@@ -179,6 +177,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
+- [ ] Make adjustments to desktop view
+- [ ] Simultaneously get posts from different listings i.e. top, new, best etc..
 - [ ] Add Ability to save posts
 
 See the [open issues](https://github.com/freyesdulib/newsddit/issues) for a full list of proposed features (and known issues).
