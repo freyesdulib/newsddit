@@ -23,92 +23,88 @@ exports.get_app = function (req, res) {
     res.render('index');
 };
 
-exports.get_posts = function (req, res) {
+exports.get_posts = async function (req, res) {
 
     if (process.env.NODE_ENV === 'production' && req.hostname !== CONFIG.prod_domain) {
         res.status(403).send();
         return false;
     }
 
-    (async () => {
+    try {
 
-        try {
+        const API = CONFIG.api;
+        let sub = 'popular';
+        let listing_type = 'hot';
+        let timeframe = 'week';
 
-            const API = CONFIG.api;
-            let sub = 'popular';
-            let listing_type = 'hot';
-            let timeframe = 'week';
+        if (req.query.sub !== undefined) {
+            sub = req.query.sub;
+        }
 
-            if (req.query.sub !== undefined) {
-                sub = req.query.sub;
+        if (req.query.listing_type !== undefined) {
+            listing_type = req.query.listing_type;
+        }
+
+        if (req.query.timeframe !== undefined) {
+            timeframe = req.query.timeframe;
+        }
+
+        let limit = 100;
+        let url = `${API}/r/${sub}/${listing_type}.json?limit=${limit}&t=${timeframe}`;
+        const response = await HTTP.get(url);
+
+        if (response.status === 200) {
+
+            let posts = [];
+
+            if (response.data.data.children.length === 0) {
+                res.status(200).send(posts);
+                return false;
             }
 
-            if (req.query.listing_type !== undefined) {
-                listing_type = req.query.listing_type;
-            }
+            let data = response.data.data.children;
 
-            if (req.query.timeframe !== undefined) {
-                timeframe = req.query.timeframe;
-            }
+            for (let i = 0; i < data.length; i++) {
 
-            let limit = 100;
-            let url = `${API}/r/${sub}/${listing_type}.json?limit=${limit}&t=${timeframe}`;
-            const response = await HTTP.get(url);
-
-            if (response.status === 200) {
-
-                let posts = [];
-
-                if (response.data.data.children.length === 0) {
+                if (data[i].kind === 't5') {
                     res.status(200).send(posts);
                     return false;
                 }
 
-                let data = response.data.data.children;
-
-                for (let i = 0; i < data.length; i++) {
-
-                    if (data[i].kind === 't5') {
-                        res.status(200).send(posts);
-                        return false;
-                    }
-
-                    posts.push({
-                        sub: data[i].data.subreddit_name_prefixed,
-                        title: data[i].data.title,
-                        comments: data[i].data.permalink,
-                        url: data[i].data.url,
-                        thumbnail: data[i].data.thumbnail,
-                        media_embed: data[i].data.media_embed,
-                        media: data[i].data.media,
-                        author: data[i].data.author,
-                        all_awardings: data[i].data.all_awardings,
-                        num_comments: data[i].data.num_comments,
-                        preview: data[i].data.preview,
-                        link_text: data[i].data.link_flair_text,
-                        ups: data[i].data.ups,
-                        is_video: data[i].data.is_video,
-                        post_hint: data[i].data.post_hint,
-                        posted_date: convert_timestamp(data[i].data.created_utc)
-                    });
-                }
-
-                res.status(200).send(posts);
+                posts.push({
+                    sub: data[i].data.subreddit_name_prefixed,
+                    title: data[i].data.title,
+                    comments: data[i].data.permalink,
+                    url: data[i].data.url,
+                    thumbnail: data[i].data.thumbnail,
+                    media_embed: data[i].data.media_embed,
+                    media: data[i].data.media,
+                    author: data[i].data.author,
+                    all_awardings: data[i].data.all_awardings,
+                    num_comments: data[i].data.num_comments,
+                    preview: data[i].data.preview,
+                    link_text: data[i].data.link_flair_text,
+                    ups: data[i].data.ups,
+                    is_video: data[i].data.is_video,
+                    post_hint: data[i].data.post_hint,
+                    posted_date: convert_timestamp(data[i].data.created_utc)
+                });
             }
 
-        } catch (error) {
-            console.error('ERROR: ', error.message);
-            res.status(error.response.status).send(error.response.data);
+            res.status(200).send(posts);
         }
 
-    })();
+    } catch (error) {
+        console.error('ERROR: ', error.message);
+        res.status(error.response.status).send(error.response.data);
+    }
 };
 
 const convert_timestamp = function (unix_timestamp) {
 
     // https://stackoverflow.com/questions/847185/convert-a-unix-timestamp-to-time-in-javascript
     let timestamp = new Date(unix_timestamp * 1000);
-    let months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+    let months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
     let year = timestamp.getFullYear();
     let month = months[timestamp.getMonth()];
     let date = timestamp.getDate();

@@ -20,7 +20,7 @@ const newsdditModule = (function () {
 
     let obj = {};
 
-    obj.collapse_nav = function() {
+    obj.collapse_nav = function () {
         document
             .querySelector('.navbar-toggler')
             .dispatchEvent(new Event('click'));
@@ -33,46 +33,42 @@ const newsdditModule = (function () {
         newsdditModule.get_posts();
     };
 
-    obj.get_posts = function () {
+    obj.get_posts = async function () {
 
         loading();
 
-        (async () => {
+        try {
 
-            try {
+            let listing_type = document.querySelector('#listing-type').value;
+            let timeframe = document.querySelector('#timeframe').value;
+            let fav_sub = document.querySelector('#fav-sub').value;
+            let sub = document.querySelector('#sub').value.trim().toLowerCase();
+            let query_string = '?';
+            query_string += `listing_type=${listing_type}`;
+            query_string += `&timeframe=${timeframe}`;
 
-                let listing_type = document.querySelector('#listing-type').value;
-                let timeframe = document.querySelector('#timeframe').value;
-                let fav_sub = document.querySelector('#fav-sub').value;
-                let sub = document.querySelector('#sub').value.trim().toLowerCase();
-                let query_string = '?';
-                    query_string += `listing_type=${listing_type}`;
-                    query_string += `&timeframe=${timeframe}`;
-
-                    if (sub.length > 0) {
-                        query_string += `&sub=${sub}`;
-                    } else if (fav_sub !== 'none') {
-                        query_string += `&sub=${fav_sub}`;
-                    }
-
-                let url = `/api/posts${query_string}`;
-                let response = await httpModule.req({
-                    method: 'GET',
-                    url: url,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (response.status === 200) {
-                    display_posts(response.data);
-                }
-
-            } catch (error) {
-                console.error('ERROR: ', error);
+            if (sub.length > 0) {
+                query_string += `&sub=${sub}`;
+            } else if (fav_sub !== 'none') {
+                query_string += `&sub=${fav_sub}`;
             }
 
-        })();
+            let url = `/api/posts${query_string}`;
+            let response = await httpModule.req({
+                method: 'GET',
+                url: url,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status === 200) {
+                display_posts(response.data);
+            }
+
+        } catch (error) {
+            console.error('ERROR: ', error);
+        }
 
         return false;
     };
@@ -103,7 +99,7 @@ const newsdditModule = (function () {
 
         let html = '';
 
-        for (let i=0;i<posts.length;i++) {
+        for (let i = 0; i < posts.length; i++) {
 
             let link_text = '';
             let media = '';
@@ -150,7 +146,7 @@ const newsdditModule = (function () {
             }
 
             if (posts[i].all_awardings !== undefined && posts[i].all_awardings.length > 0) {
-                for (let j=0;j<posts[i].all_awardings.length;j++) {
+                for (let j = 0; j < posts[i].all_awardings.length; j++) {
                     awardings += `<img src="${posts[i].all_awardings[j].resized_static_icons[0].url}" title="${posts[i].all_awardings[j].name}" alt="image">&nbsp;`;
                 }
             }
@@ -221,8 +217,8 @@ const newsdditModule = (function () {
         return false;
     };
 
-    obj.init = function () {
-        newsdditModule.get_posts();
+    obj.init = async function () {
+        await newsdditModule.get_posts();
     };
 
     return obj;
